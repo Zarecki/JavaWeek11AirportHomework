@@ -3,11 +3,13 @@ public class Flight {
     private Plane plane;
     private int flightnumber;
     private AirportCodeType destination;
+    private int bookings;
 
     public Flight(Plane plane, int flightnumber, AirportCodeType destination){
         this.plane = plane;
         this.flightnumber = flightnumber;
         this.destination = destination;
+        this.bookings = 0;
     }
 
     public PlaneType getPlane(){
@@ -26,11 +28,19 @@ public class Flight {
         return this.plane.getPassengers();
     }
 
-    public void addPassengers(int i) {
-        this.plane.addPassengers(i);
+    public void addBooking(int i) {
+        this.bookings += i;
     }
 
     public int checkTicketsSold() {
-        return this.plane.getPassengers();
+        return this.bookings;
+    }
+
+    public int checkFlightCapacity() {
+       return this.plane.getCapacity();
+    }
+
+    public void boardPassenger() {
+        this.plane.addPassenger();
     }
 }

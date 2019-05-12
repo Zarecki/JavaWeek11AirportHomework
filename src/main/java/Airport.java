@@ -28,6 +28,15 @@ public class Airport {
     }
 
     public void sellTicket(Flight flight, int i) {
-        flight.addPassengers(i);
+        if (flight.checkTicketsSold() < flight.checkFlightCapacity())
+        flight.addBooking(i);
+    }
+
+    public void checkTicketsSold(Flight flight){
+        flight.checkTicketsSold();
+    }
+
+    public void checkInForFlight(Flight flight){
+        flight.boardPassenger();
     }
 }

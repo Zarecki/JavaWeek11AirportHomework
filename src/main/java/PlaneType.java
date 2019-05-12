@@ -1,8 +1,17 @@
 public enum PlaneType {
 
-    AIRBUS380,
-    BOEING747,
-    BOEING777,
-    AIRBUSA340;
+    AIRBUS380(525),
+    BOEING747(416),
+    BOEING777(162),
+    AIRBUSA340(350);
 
+    private final int capacity;
+
+    PlaneType(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }

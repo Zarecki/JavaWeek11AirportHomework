@@ -3,11 +3,13 @@ public class Plane {
     private PlaneType type;
     private Airline airline;
     private int passengers;
+    private int capacity;
 
     public Plane(PlaneType type, Airline airline, int passengers){
         this.type = type;
         this.airline = airline;
         this.passengers = passengers;
+        this.capacity = type.getCapacity();
     }
 
     public PlaneType getType() {
@@ -27,7 +29,12 @@ public class Plane {
         return plane2;
     }
 
-    public void addPassengers(int i) {
-        this.passengers += i;
+    public void addPassenger() {
+        if (this.passengers < this.capacity)
+        this.passengers += 1;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
     }
 }
